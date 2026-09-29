@@ -12,7 +12,7 @@ html{scroll-padding-top:80px}a:focus-visible,summary:focus-visible{outline:3px s
 
 @media(max-width:1000px){.links,.nav>.btn{display:none}.mobile-menu{display:block;position:relative}.mobile-menu summary{list-style:none;cursor:pointer;border:1px solid var(--line);border-radius:9px;padding:8px 14px;min-height:44px}.mobile-menu summary::-webkit-details-marker{display:none}.menu-panel{position:absolute;right:0;top:52px;width:min(250px,calc(100vw - 32px));padding:8px;display:grid;background:#291c44;border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 35px #0007}.menu-panel a{padding:9px 12px}}
 .material-main{padding:64px 0 100px;min-height:75vh}.material-intro{max-width:760px;margin-bottom:38px}.material-intro h1{font-size:clamp(42px,6vw,68px);line-height:1.04;letter-spacing:-.045em;margin:12px 0 14px}.material-intro p{color:var(--muted);font-size:18px;margin:0}.week-list{display:grid;gap:13px}.week{border:1px solid var(--line);border-radius:15px;background:var(--panel);overflow:hidden}.week[open]{border-color:#8060ac;background:#2b1b49}.week summary{display:grid;grid-template-columns:110px 1fr auto;gap:18px;align-items:center;cursor:pointer;list-style:none;padding:24px}.week summary::-webkit-details-marker{display:none}.week summary:hover{background:#3a2858}.week-number{font:750 14px/1.3 ui-monospace,monospace;letter-spacing:.09em;color:var(--accent2)}.week-title{font-size:20px;font-weight:750;line-height:1.25}.toggle{color:var(--accent2);font-size:25px;line-height:1}.week[open] .toggle{transform:rotate(45deg)}.week-body{border-top:1px solid var(--line);padding:20px 24px 26px 152px}.week-body p{margin:0 0 18px;color:var(--muted)}.material-links{display:flex;gap:12px;flex-wrap:wrap}.resource{display:inline-flex;align-items:center;min-height:42px;padding:8px 14px;border:1px solid var(--line);border-radius:8px;font-weight:650}.resource[href]:hover{border-color:var(--accent);color:var(--accent)}.resource.pending{color:var(--muted);font-weight:500;border-style:dashed}.back-link{display:inline-block;margin-top:28px;color:var(--blue);font-weight:650}.back-link:hover{text-decoration:underline}@media(max-width:650px){.material-main{padding:46px 0 70px}.week summary{grid-template-columns:1fr auto;gap:5px 12px;padding:20px}.week-number{grid-column:1}.week-title{grid-column:1}.toggle{grid-column:2;grid-row:1 / span 2}.week-body{padding:18px 20px 24px}.material-links{display:grid}.resource{width:100%}}
-.brand{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}.ieee-logo{display:block;width:144px;height:auto;padding:12px;border-radius:6px;background:#fff}.brand-label{color:var(--text)}@media(max-width:440px){.brand-label{display:none}}
+.brand{display:inline-flex;align-items:center;gap:10px;white-space:nowrap}.ieee-logo{display:block;width:144px;height:auto;padding:12px;border-radius:6px;background:#fff}.brand-label{color:var(--text)}@media(max-width:440px){.brand-label{display:none}}.week-project{margin-top:20px;padding:20px;border:1px solid #6c5192;border-radius:12px;background:rgba(16,10,32,.36)}.week-project h4{margin:0 0 10px;font-size:20px}.week-project p{margin:0 0 14px}.week-project img{display:block;width:min(700px,100%);height:auto;margin-top:14px;border-radius:10px;background:#fff;border:1px solid var(--line)}.video-soon{margin-top:12px;color:var(--accent2);font-weight:700}
 </style>
 </head>
 <body>
@@ -26,7 +26,7 @@ html{scroll-padding-top:80px}a:focus-visible,summary:focus-visible{outline:3px s
 </details>
 <details class="week">
   <summary><span class="week-number">WEEK 02</span><span class="week-title">Parametric modeling</span><span class="toggle" aria-hidden="true">+</span></summary>
-  <div class="week-body"><p>Practice dimensions, features, patterns, fillets, and changing a design without starting over.</p><div class="material-links"><a class="resource" href="https://docs.google.com/presentation/d/1vEmqoCLeiXqvmBcSclQd0eQSVD4DJCxFCAlomdfy-e8/edit" target="_blank" rel="noopener noreferrer">Open Week 2 slides ↗</a></div></div>
+  <div class="week-body"><p>Practice dimensions, features, patterns, fillets, and changing a design without starting over.</p><div class="material-links"><a class="resource" href="https://docs.google.com/presentation/d/1vEmqoCLeiXqvmBcSclQd0eQSVD4DJCxFCAlomdfy-e8/edit" target="_blank" rel="noopener noreferrer">Open Week 2 slides ↗</a></div><div class="week-project"><h4>Week 2 Project</h4><p><strong>Create the object shown below in Fusion 360 by next week.</strong> Follow the dimensions in the drawing and recreate the part as accurately as you can.</p><div class="video-soon">Video tutorial will be posted soon.</div><img id="week2-project-image" alt="Week 2 CAD project technical drawing with dimensions"></div></div>
 </details>
 <details class="week">
   <summary><span class="week-number">WEEK 03</span><span class="week-title">Design for 3D printing</span><span class="toggle" aria-hidden="true">+</span></summary>
@@ -39,4 +39,10 @@ html{scroll-padding-top:80px}a:focus-visible,summary:focus-visible{outline:3px s
   <a class="back-link" href="index.html">← Back to home</a>
 </div></main>
 <footer><div class="wrap foot"><strong>IEEE CAD / HAC • NJIT</strong><span>Tuesdays, 1:00–2:00 PM · FMH 309</span></div></footer>
+<script>
+Promise.all([1,2,3,4,5,6,7].map(n=>fetch('assets/week2-project-'+n+'.txt').then(r=>r.text()))).then(parts=>{
+  const img=document.getElementById('week2-project-image');
+  if(img) img.src='data:image/jpeg;base64,'+parts.join('');
+});
+</script>
 </body></html>
