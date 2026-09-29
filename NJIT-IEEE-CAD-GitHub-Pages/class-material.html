@@ -26,7 +26,7 @@ html{scroll-padding-top:80px}a:focus-visible,summary:focus-visible{outline:3px s
 </details>
 <details class="week">
   <summary><span class="week-number">WEEK 02</span><span class="week-title">Parametric modeling</span><span class="toggle" aria-hidden="true">+</span></summary>
-  <div class="week-body"><p>Practice dimensions, features, patterns, fillets, and changing a design without starting over.</p><div class="material-links"><a class="resource" href="https://docs.google.com/presentation/d/1vEmqoCLeiXqvmBcSclQd0eQSVD4DJCxFCAlomdfy-e8/edit" target="_blank" rel="noopener noreferrer">Open Week 2 slides ↗</a></div><div class="week-project"><h4>Week 2 Project</h4><p><strong>Create the object shown below in Fusion 360 by next week.</strong> Follow the dimensions in the drawing and recreate the part as accurately as you can.</p><div class="video-soon">Video tutorial will be posted soon.</div><img id="week2-project-image" alt="Week 2 CAD project technical drawing with dimensions"></div></div>
+  <div class="week-body"><p>Practice dimensions, features, patterns, fillets, and changing a design without starting over.</p><div class="material-links"><a class="resource" href="https://docs.google.com/presentation/d/1vEmqoCLeiXqvmBcSclQd0eQSVD4DJCxFCAlomdfy-e8/edit" target="_blank" rel="noopener noreferrer">Open Week 2 slides ↗</a></div><div class="week-project"><h4>Week 2 Project</h4><p><strong>Create the object shown below in Fusion 360 by next week.</strong> Follow the dimensions in the drawing and recreate the part as accurately as you can.</p><div class="video-soon">Video tutorial will be posted soon.</div><img src="assets/week2-project.jpg" alt="Week 2 CAD project technical drawing with dimensions"></div></div>
 </details>
 <details class="week">
   <summary><span class="week-number">WEEK 03</span><span class="week-title">Design for 3D printing</span><span class="toggle" aria-hidden="true">+</span></summary>
@@ -39,10 +39,4 @@ html{scroll-padding-top:80px}a:focus-visible,summary:focus-visible{outline:3px s
   <a class="back-link" href="index.html">← Back to home</a>
 </div></main>
 <footer><div class="wrap foot"><strong>IEEE CAD / HAC • NJIT</strong><span>Tuesdays, 1:00–2:00 PM · FMH 309</span></div></footer>
-<script>
-Promise.all([1,2,3,4,5,6,7].map(n=>fetch('assets/week2-project-'+n+'.txt').then(r=>r.text()))).then(parts=>{
-  const img=document.getElementById('week2-project-image');
-  if(img) img.src='data:image/jpeg;base64,'+parts.join('');
-});
-</script>
 </body></html>
