@@ -26,63 +26,23 @@ h1,h2,h3,.brand,.stat b,.showcase h2,.contact-card h2{font-family:"Fredoka","Nun
 </main>
 <footer><div class="wrap foot"><strong>IEEE CAD / HAC • NJIT</strong><span>Design • Prototype • Build</span></div></footer>
 <script>
-const sectionLinks=[...document.querySelectorAll('.links a[href^="#"]')];
-const sections=sectionLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
-let forcedActive=null;
-let ticking=false;
+const navLinks=[...document.querySelectorAll('.links a[href^="#"]')];
 
-function activate(id){
-  sectionLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')==='#'+id));
+function setActive(link){
+  navLinks.forEach(item=>item.classList.remove('active'));
+  link.classList.add('active');
 }
 
-function getCurrentSection(){
-  const marker=window.scrollY+120;
-  let current=sections[0];
-  for(const section of sections){
-    if(section.offsetTop<=marker) current=section;
-    else break;
-  }
-  return current;
-}
-
-function updateActive(){
-  ticking=false;
-  if(forcedActive){
-    activate(forcedActive);
-    return;
-  }
-  const current=getCurrentSection();
-  if(current) activate(current.id);
-}
-
-sectionLinks.forEach(link=>{
-  link.addEventListener('click',event=>{
-    const target=document.querySelector(link.getAttribute('href'));
-    if(!target) return;
-    event.preventDefault();
-    const id=target.id;
-    forcedActive=id;
-    activate(id);
-    history.replaceState(null,'','#'+id);
-    target.scrollIntoView({behavior:'smooth',block:'start'});
-    window.setTimeout(()=>{
-      forcedActive=null;
-      activate(id);
-    },1400);
+navLinks.forEach(link=>{
+  link.addEventListener('click',()=>{
+    setActive(link);
   });
 });
 
-window.addEventListener('scroll',()=>{
-  if(!ticking){
-    ticking=true;
-    requestAnimationFrame(updateActive);
-  }
-},{passive:true});
-
 window.addEventListener('load',()=>{
-  const id=location.hash.replace('#','');
-  if(id && sections.some(section=>section.id===id)) activate(id);
-  else updateActive();
+  const currentHash=location.hash;
+  const matching=navLinks.find(link=>link.getAttribute('href')===currentHash);
+  if(matching) setActive(matching);
 });
 </script>
 </body></html>
