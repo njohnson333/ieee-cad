@@ -28,7 +28,7 @@ h1,h2,h3,.brand,.stat b,.showcase h2,.contact-card h2{font-family:"Fredoka","Nun
 <script>
 const sectionLinks=[...document.querySelectorAll('.links a[href^="#"]')];
 const sections=sectionLinks.map(link=>document.querySelector(link.getAttribute('href'))).filter(Boolean);
-let clickLockUntil=0;
+let forcedActive=null;
 let ticking=false;
 
 function activate(id){
@@ -36,7 +36,7 @@ function activate(id){
 }
 
 function getCurrentSection(){
-  const marker=window.scrollY+110;
+  const marker=window.scrollY+120;
   let current=sections[0];
   for(const section of sections){
     if(section.offsetTop<=marker) current=section;
@@ -47,7 +47,10 @@ function getCurrentSection(){
 
 function updateActive(){
   ticking=false;
-  if(Date.now()<clickLockUntil) return;
+  if(forcedActive){
+    activate(forcedActive);
+    return;
+  }
   const current=getCurrentSection();
   if(current) activate(current.id);
 }
@@ -58,11 +61,14 @@ sectionLinks.forEach(link=>{
     if(!target) return;
     event.preventDefault();
     const id=target.id;
+    forcedActive=id;
     activate(id);
-    clickLockUntil=Date.now()+850;
     history.replaceState(null,'','#'+id);
     target.scrollIntoView({behavior:'smooth',block:'start'});
-    window.setTimeout(()=>{clickLockUntil=0;updateActive();},900);
+    window.setTimeout(()=>{
+      forcedActive=null;
+      activate(id);
+    },1400);
   });
 });
 
