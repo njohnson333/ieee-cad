@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="1024" viewBox="0 0 1536 1024">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0" stop-color="#d5d0c7"/><stop offset=".5" stop-color="#aaa49b"/><stop offset="1" stop-color="#77736d"/></linearGradient>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M8 0L0 4l8 4z" fill="#111"/></marker>
+  <style>.o{fill:url(#g);stroke:#111;stroke-width:2.2}.d{fill:none;stroke:#111;stroke-width:1.8;marker-start:url(#arr);marker-end:url(#arr)}.e{stroke:#111;stroke-width:1.5}.t{font-family:Georgia,serif;font-weight:700;fill:#111;font-size:27px}.v{font-family:Georgia,serif;font-weight:700;fill:#111;font-size:25px}.lbl{font-family:Georgia,serif;font-weight:700;fill:#111;font-size:30px}</style>
+</defs><rect width="1536" height="1024" fill="#fff"/>
+<!-- FRONT -->
+<g transform="translate(70 25)">
+<rect x="90" y="5" width="335" height="315" rx="4" class="o"/><rect x="90" y="320" width="335" height="92" rx="7" class="o"/>
+<line x1="35" y1="5" x2="35" y2="412" class="d"/><line x1="35" y1="5" x2="90" y2="5" class="e"/><line x1="35" y1="412" x2="90" y2="412" class="e"/><text x="0" y="216" class="v">3.30 in</text>
+<line x1="90" y1="445" x2="425" y2="445" class="d"/><text x="257" y="478" text-anchor="middle" class="v">2.36 in</text>
+<line x1="458" y1="320" x2="458" y2="412" class="d"/><line x1="425" y1="320" x2="470" y2="320" class="e"/><line x1="425" y1="412" x2="470" y2="412" class="e"/><text x="475" y="375" class="v">0.70 in</text>
+<rect x="135" y="485" width="245" height="54" fill="#d5eaff"/><text x="257" y="524" text-anchor="middle" class="lbl">Front View</text>
+</g>
+<!-- SIDE -->
+<g transform="translate(740 22)">
+<path d="M70 420 L70 318 Q82 298 104 306 Q142 326 172 330 Q205 334 234 312 L450 3 Q467 -18 488 0 Q501 11 492 30 L298 311 Q286 330 303 341 Q314 348 330 348 L592 348 Q610 348 610 365 Q610 384 592 384 L70 384Z" class="o"/>
+<line x1="70" y1="415" x2="610" y2="415" class="d"/><text x="340" y="448" text-anchor="middle" class="v">3.50 in</text>
+<line x1="76" y1="278" x2="238" y2="278" class="d"/><text x="157" y="267" text-anchor="middle" class="v">0.90 in</text>
+<line x1="20" y1="305" x2="20" y2="384" class="d"/><text x="-10" y="350" class="v">0.70 in</text>
+<line x1="238" y1="306" x2="238" y2="384" class="d"/><text x="249" y="358" class="v">0.30 in</text>
+<line x1="230" y1="319" x2="450" y2="3" stroke="#111" stroke-width="10" opacity=".001"/>
+<line x1="297" y1="215" x2="335" y2="240" class="d"/><text x="255" y="205" class="v">0.40 in</text>
+<path d="M315 348 A90 90 0 0 1 374 270" fill="none" stroke="#111" stroke-width="2"/><text x="365" y="305" class="v">60.0°</text>
+<line x1="525" y1="3" x2="525" y2="348" class="d"/><text x="540" y="190" class="v">3.00 in</text>
+<line x1="625" y1="348" x2="625" y2="384" class="d"/><text x="637" y="376" class="v">0.30 in</text>
+<rect x="265" y="455" width="225" height="54" fill="#d5eaff"/><text x="378" y="494" text-anchor="middle" class="lbl">Side View</text>
+</g>
+<!-- TOP -->
+<g transform="translate(100 565)">
+<rect x="90" y="0" width="322" height="322" class="o"/><rect x="90" y="242" width="322" height="80" class="o"/>
+<line x1="40" y1="0" x2="40" y2="322" class="d"/><text x="-5" y="170" class="v">3.50 in</text>
+<line x1="90" y1="350" x2="412" y2="350" class="d"/><text x="251" y="382" text-anchor="middle" class="v">2.36 in</text>
+<rect x="139" y="395" width="225" height="54" fill="#d5eaff"/><text x="251" y="434" text-anchor="middle" class="lbl">Top View</text>
+</g>
+<!-- ISO -->
+<g transform="translate(930 560)">
+<path d="M65 280 L70 205 Q80 188 100 202 L152 244 L300 15 Q311 0 326 8 L458 98 Q472 108 460 123 L337 312 L505 392 L500 420 L319 344 L185 365 L60 307Z" fill="url(#g)" stroke="#111" stroke-width="2.2"/>
+<path d="M80 211 L105 225 L170 274 L180 306 L65 280Z" fill="url(#g)" stroke="#111" stroke-width="2"/>
+<path d="M177 300 L300 15 L326 8 L320 35 L205 315Z" fill="#a39d94" stroke="#111" stroke-width="2"/>
+<rect x="120" y="420" width="295" height="54" fill="#d5eaff"/><text x="267" y="459" text-anchor="middle" class="lbl">Isometric View</text>
+</g></svg>
